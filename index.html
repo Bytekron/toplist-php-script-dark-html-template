@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TopList — Best websites ranked</title>
+  <meta name="description" content="Hand-picked tools and destinations across learning, productivity, AI, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("toplist-theme");
+        if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <main class="main">
+    <section class="home-hero">
+      <div class="home-hero__visual" id="home-hero-visual" aria-hidden="true"></div>
+      <div class="wrap home-hero__content">
+        <p class="home-hero__brand" id="home-brand">TopList<span>.</span></p>
+        <h1 class="home-hero__title" id="home-title">The best websites, ranked</h1>
+        <p class="home-hero__sub" id="home-subtitle"></p>
+        <div class="home-hero__actions">
+          <a class="btn btn--primary btn--inline" href="#lists">Browse lists</a>
+          <button type="button" class="btn btn--ghost btn--inline" data-search-open>Search sites</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="lists">
+      <p class="lists-section__label">Browse by category</p>
+      <div id="category-grid" class="category-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
